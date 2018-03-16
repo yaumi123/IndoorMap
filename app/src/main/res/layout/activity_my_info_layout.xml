@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout>
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.tq.indoormap.entity.User" />
+    </data>
+
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+
+        <include layout="@layout/appbar_layout_with_toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_large"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:minHeight="60dp"
+                android:padding="@dimen/margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/avatar"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:minWidth="60dp"
+                    android:src="@mipmap/ic_def_avatar_man" />
+
+
+            </FrameLayout>
+
+
+            <com.tq.indoormap.ui.widget.DoubleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/white"
+                android:drawablePadding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_theme_24dp"
+                android:gravity="center_vertical"
+                android:minHeight="45dp"
+                android:padding="@dimen/margin_large"
+                android:text="@string/username"
+                android:textSize="16sp"
+                app:secondText="@{user.name}"
+                app:secondTextSize="16sp" />
+
+            <com.tq.indoormap.ui.widget.DoubleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/white"
+                android:drawablePadding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_theme_24dp"
+                android:gravity="center_vertical"
+                android:minHeight="45dp"
+                android:padding="@dimen/margin_large"
+                android:text="@string/gender"
+                android:textSize="16sp"
+                app:secondText="@{user.gender}"
+                app:secondTextSize="16sp" />
+
+            <com.tq.indoormap.ui.widget.DoubleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/white"
+                android:drawablePadding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_theme_24dp"
+                android:gravity="center_vertical"
+                android:minHeight="45dp"
+                android:padding="@dimen/margin_large"
+                android:text="@string/phone"
+                android:textSize="16sp"
+                app:secondText="@{user.phone}"
+                app:secondTextSize="16sp" />
+
+            <com.tq.indoormap.ui.widget.DoubleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:background="@color/white"
+                android:drawablePadding="15dp"
+                android:drawableRight="@drawable/ic_chevron_right_theme_24dp"
+                android:gravity="center_vertical"
+                android:minHeight="45dp"
+                android:padding="@dimen/margin_large"
+                android:text="@string/birthday"
+                android:textSize="16sp"
+                app:secondText="@{user.birthday}"
+                app:secondTextSize="16sp" />
+
+
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</layout>
+

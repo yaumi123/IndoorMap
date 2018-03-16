@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M571" />
+
+    <TextView
+        android:id="@+id/device_mac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="34:65:90:23" />
+
+    <TextView
+        android:id="@+id/device_rssi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSSI:-89" />
+
+    <TextView
+        android:id="@+id/device_dis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dis:76" />
+
+</LinearLayout>

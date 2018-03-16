@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">IndoorMap</string>
+    <string name="title_map">地图</string>
+    <string name="title_near">附近</string>
+    <string name="title_mine">用户中心</string>
+
+    <string name="login_title">大型商城电子地图APP</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+
+    <string name="my_info">我的信息</string>
+    <string name="my_collection">收藏夹</string>
+    <string name="setting">设置</string>
+    <string name="youhui">优惠券</string>
+
+    <string name="search">搜索</string>
+
+    <string name="shop_detail">商店详情</string>
+
+
+    <string name="username">姓名</string>
+    <string name="gender">性别</string>
+    <string name="avatar">头像</string>
+    <string name="phone">手机号</string>
+    <string name="birthday">生日</string>
+
+
+
+    <string-array name="types">
+        <item>美食</item>
+        <item>服装</item>
+        <item>娱乐</item>
+        <item>生活</item>
+    </string-array>
+
+
+
+</resources>

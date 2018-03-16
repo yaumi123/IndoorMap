@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e6e1e1"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/appbar_layout_with_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="20dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <Switch
+            android:id="@+id/type_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="15dp"
+            android:text="蓝牙搜索方式" />
+
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>

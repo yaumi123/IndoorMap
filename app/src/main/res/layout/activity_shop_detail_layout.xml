@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="shop"
+            type="com.tq.indoormap.entity.Shop" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <include layout="@layout/appbar_layout_with_toolbar" />
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin">
+
+
+                <ImageView
+                    android:id="@+id/shop_avatar"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_shop_def" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin_lx"
+                    android:layout_toRightOf="@id/shop_avatar"
+                    android:text="@{shop.name}"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/shop_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shop_avatar"
+                    android:layout_marginTop="@dimen/margin"
+                    android:text="@{shop.type}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shop_type"
+                    android:layout_marginTop="@dimen/margin"
+                    android:text="@{shop.introduction}" />
+
+
+            </RelativeLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floating_btn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="@dimen/margin_lx"
+            android:src="@drawable/ic_home_map" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion Integer.parseInt(ANDROID_BUILD_TARGET_SDK_VERSION)
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
+    defaultConfig {
+        applicationId "com.tq.indoormap"
+        minSdkVersion Integer.parseInt(ANDROID_BUILD_MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(ANDROID_BUILD_TARGET_SDK_VERSION)
+        versionCode Integer.parseInt(VERSION_CODE)
+        versionName VERSION_NAME
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "d518cd75ae15f86fa9676ba7", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+/**
+ * greendao数据库开源库的东东
+ */
+apply plugin: 'org.greenrobot.greendao'
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+/**
+ * 定义数据库版本，自动生成的代码包名
+ * 升级数据库版本的时候，更改这个schemaVersion版本号
+ */
+greendao {
+    schemaVersion 3
+    daoPackage 'com.tq.indoormap.greenDao'
+    targetGenDir 'src/main/java'
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    /*数据库插件*/
+    compile 'org.greenrobot:greendao-generator:3.2.0'
+    compile 'org.greenrobot:greendao:3.2.0'
+    /*greenDao数据库更新辅助类*/
+    compile 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v1.3.0'
+    //日期
+    compile 'com.contrarywind:Android-PickerView:3.1.2'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.8.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    testCompile 'junit:junit:4.12'
+    compile project(':retrofit')
+    compile 'com.android.support:support-v13:25.3.1'
+    /*筛选*/
+    compile 'com.github.dongjunkun:DropDownMenu:1.0.3'
+    compile('com.afollestad.material-dialogs:core:0.9.4.1') {
+        exclude module: 'support-v13'
+    }
+    /*蓝牙*/
+    compile 'com.akexorcist:bluetoothspp:1.0.0'
+    compile 'com.github.AltBeacon:android-beacon-library:2.9.2'
+
+    compile 'cn.jiguang.sdk:janalytics:1.0.0' // 此处以JAnalytics 1.0.0 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.1' // 此处以JCore 1.0.0 版本为例。
+
+    compile project(':imageloader')
+    compile project(':mapView')
+    compile project(':ble')
+}
